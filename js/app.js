@@ -24,6 +24,7 @@ $(function() {
     The Game
      */
     $(".field").click(function() {
+
         /*
         User action
          */
@@ -43,7 +44,7 @@ $(function() {
                     freeFields.push(key);
                 }
             });
-            console.log(freeFields);
+
             /*
              AI thing (monkey way)
              */
@@ -52,10 +53,9 @@ $(function() {
                 $("#" + randomField).html('<i class="fa fa-circle-o fa-5" aria-hidden="true"></i>');
                 board[randomField] = 'o';
             }
-            console.log(randomField);
 
         }, 500);
-        console.log(board);
+
         /*
         Clear possible fields array
          */

@@ -48,7 +48,8 @@ $(function() {
             /*
              AI thing (monkey way)
              */
-            var randomField = freeFields[Math.floor(Math.random() * (freeFields.length > 1) ? (freeFields.length - 1) : freeFields.length)];
+            var randomIndex = Math.floor(Math.random() * freeFields.length);
+            var randomField = freeFields[randomIndex];
             if(randomField != undefined) {
                 $("#" + randomField).html('<i class="fa fa-circle-o fa-5" aria-hidden="true"></i>');
                 board[randomField] = 'o';

@@ -36,23 +36,26 @@ $(function() {
         setTimeout(function() {
 
             /*
-            Find free fields, and put them into volatile array
+             Find free fields, and put them into volatile array
              */
-            $.each(board, function(key, value) {
-                if(value === null) {
+            $.each(board, function (key, value) {
+                if (value === null) {
                     freeFields.push(key);
                 }
             });
-
+            console.log(freeFields);
             /*
-            AI thing (monkey way)
+             AI thing (monkey way)
              */
-            var randomField = freeFields[Math.floor(Math.random() * freeFields.length)];
-            $("#" + randomField).html('<i class="fa fa-circle-o fa-5" aria-hidden="true"></i>');
-            board[randomField] = 'o';
+            var randomField = freeFields[Math.floor(Math.random() * (freeFields.length > 1) ? (freeFields.length - 1) : freeFields.length)];
+            if(randomField != undefined) {
+                $("#" + randomField).html('<i class="fa fa-circle-o fa-5" aria-hidden="true"></i>');
+                board[randomField] = 'o';
+            }
+            console.log(randomField);
 
         }, 500);
-
+        console.log(board);
         /*
         Clear possible fields array
          */

@@ -21,6 +21,11 @@ $(function() {
     var freeFields = [];
 
     /*
+    Game status control
+     */
+    var isFinished = false;
+
+    /*
     The Game
      */
     $(".field").click(function() {
@@ -53,6 +58,12 @@ $(function() {
             if(randomField != undefined) {
                 $("#" + randomField).html('<i class="fa fa-circle-o fa-5" aria-hidden="true"></i>');
                 board[randomField] = 'o';
+            } else {
+                /*
+                No more free fields. End game.
+                 */
+                isFinished = true;
+                $('#modal').modal('show');
             }
 
         }, 500);

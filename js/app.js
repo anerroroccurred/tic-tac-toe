@@ -37,7 +37,7 @@ $(function() {
         setTimeout(function() {
 
             /*
-             Find free fields, and put them into volatile array
+            Find free fields, and put them into volatile array
              */
             $.each(board, function (key, value) {
                 if (value === null) {
@@ -46,7 +46,7 @@ $(function() {
             });
 
             /*
-             AI thing (monkey way)
+            AI thing (monkey way)
              */
             var randomIndex = Math.floor(Math.random() * freeFields.length);
             var randomField = freeFields[randomIndex];
